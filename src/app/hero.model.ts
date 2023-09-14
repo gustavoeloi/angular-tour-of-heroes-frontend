@@ -1,6 +1,6 @@
 export interface Hero {
   id: number;
-  name: string;
+  nome: string;
   personalName: string;
   creator: string;
 }

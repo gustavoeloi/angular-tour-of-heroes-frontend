@@ -1,14 +1,7 @@
-<h3>{{ hero.name }} details!</h3>
+<h2>My Heroes</h2>
 
-
-<p>ID: {{ hero.id }}</p>
-<p>Personal Name: {{ hero.personalName }}</p>
-<p>Criador: {{ hero.creator }}</p>
-
-<h5>Edit name</h5>
-<div>
-  <label for="name">Name </label>
-  <input type="text" id="name" placeholder="Altere o nome" [(ngModel)]="hero.name">
-  <input type="text" id="name" placeholder="Altere o Nome Pessoal" [(ngModel)]="hero.personalName">
-  <input type="text" id="name" placeholder="Altere o Criador" [(ngModel)]="hero.creator">
-</div>
+<ul *ngFor="let hero of heroes">
+  <li>
+    <span>{{ hero.id }}</span> {{ hero.nome }}
+  </li>
+</ul>
