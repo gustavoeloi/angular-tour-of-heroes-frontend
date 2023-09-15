@@ -1,7 +1,7 @@
 <h2>My Heroes</h2>
 
-<ul *ngFor="let hero of heroes">
-  <li>
-    <span>{{ hero.id }}</span> {{ hero.nome }}
-  </li>
+<ul>
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">{{ hero.nome }}</li>
 </ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
