@@ -1,5 +1,12 @@
-<div *ngIf="hero">
-  <h3>{{hero.nome }} Details!</h3>
-  <p>Nome Real: {{hero.personalName }}</p>
-  <p>Criador: {{hero.creator }}</p>
-</div>
+<mat-card class="example-card" *ngIf="hero">
+  <mat-card-header>
+    <mat-card-title>{{hero.nome }} Details!</mat-card-title>
+    <mat-card-subtitle>{{ hero.personalName }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="hero.img" alt="imagem de um superhéroi" class="img">
+  <mat-card-content>
+    <p>
+      Foi criada pela {{ hero.creator }}
+    </p>
+  </mat-card-content>
+</mat-card>

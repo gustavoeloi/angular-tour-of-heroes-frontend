@@ -1,3 +1,4 @@
+import { MessageService } from './../shared/services/message.service';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero.model';
 import { HeroService } from '../shared/services/hero.service';
@@ -10,8 +11,12 @@ import { HeroService } from '../shared/services/hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero?: Hero;
+  isClicked = false;
 
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.getHeroes();
@@ -22,6 +27,17 @@ export class HeroesComponent implements OnInit {
   }
 
   onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+    this.isClicked = !this.isClicked;
+
+    if (this.isClicked) {
+      this.selectedHero = hero;
+      this.messageService.add(`HeroesComponent: Selected hero id: ${hero.id}`);
+    } else {
+      this.selectedHero = undefined;
+    }
+  }
+
+  testeLog() {
+    console.log('O item foi clickado!');
   }
 }
