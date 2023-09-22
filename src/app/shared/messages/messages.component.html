@@ -1,6 +1,6 @@
 <mat-accordion *ngIf="messageService.getMessages().length">
   <h2>Messages</h2>
-  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Message Component
