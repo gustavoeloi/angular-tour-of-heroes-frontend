@@ -1,0 +1,11 @@
+<h2>Mostrando o DashBoard</h2>
+
+
+<div fxLayoutGap="12px" fxLayout fxLayoutAlign="space-between" fxLayout.xs="column">
+  <mat-card class="example-card" *ngFor="let hero of heroes">
+    <mat-card-header>
+      <mat-card-title>{{hero.nome }} Details!</mat-card-title>
+      <mat-card-subtitle>{{ hero.personalName }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
